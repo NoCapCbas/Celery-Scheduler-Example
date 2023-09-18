@@ -81,31 +81,29 @@ def start_worker():
 
 def start_celery_flower():
     ''''
-    Runs a monitoring dashboard for celery processes
+    Runs a monitoring dashboard for celery workers
     '''
-    subprocess.call(['celery -A run_celery flower'])
+    subprocess.call(['celery', '-A', 'celery_scheduler', 'flower'], shell=True)
 
 if __name__ == '__main__':
+
     # Create processes 
     celery_beat_proc = multiprocessing.Process(target=start_celery_beat)
     celery_worker_proc1 = multiprocessing.Process(target=start_worker)
     # celery_worker_proc2 = multiprocessing.Process(target=start_worker)   
-    # celery_flower_proc = multiprocessing.Process(target=start_celery_flower)
+    celery_flower_proc = multiprocessing.Process(target=start_celery_flower)
+
 
     # Start the processes
     celery_beat_proc.start()
     celery_worker_proc1.start()
     # celery_worker_proc2.start()
-    # celery_flower_proc.start()
+    celery_flower_proc.start()
 
-    while True: 
-        check_celery_queue()
-        if not celery_worker_proc1.is_alive():
-            celery_beat_proc.terminate()
 
     # Wait for the processes to finish
     celery_beat_proc.join()
     celery_worker_proc1.join()
     # celery_worker_proc2.join()
-    # celery_flower_proc.join()
+    celery_flower_proc.join()
 
