@@ -23,7 +23,7 @@ To install the required Python Packages, create a virtual environment and run:
 ```bash 
 pip install -r requirements.txt
 ```
-## Running run_celery.py 
+## Running celery_scheduler.py 
 
 Navigate to directory with celery_scheduler.py and run the following command to begin celery scheduler:
 
