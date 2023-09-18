@@ -28,6 +28,9 @@ def verify_redis_running():
     return response
 
 def check_redis_queue():
+    """
+    Checks Redis Queue and returns queue length
+    """
     # Connect to Redis instance 
     redis_client = redis.StrictRedis(host='localhost', port=6379, db=0)
     # Get the current queue length 
@@ -47,22 +50,25 @@ def check_celery_queue():
     scheduled = inspector.scheduled()
     reserved = inspector.reserved()
     
-    print(active, scheduled, reserved)
+    # print(active, scheduled, reserved)
     return active, scheduled, reserved
 
 def purge_celery_queue():
     """
     Clears Celery Queue
     """
-    print('Purging Queue')
     app.control.purge()
 
 def start_celery_beat():
-    print('start_celery_beat')
+    '''
+    Begins celery beat
+    '''
     app.Beat(loglevel='debug').run()
 
 def start_worker():
-    print('start_celery_beat')
+    '''
+    Begins celery worker
+    '''
     argv = [
         'worker', 
         '--pool=solo',
@@ -74,14 +80,12 @@ def start_worker():
     app.worker_main(argv)
 
 def start_celery_flower():
+    ''''
+    Runs a monitoring dashboard for celery processes
+    '''
     subprocess.call(['celery -A run_celery flower'])
 
 if __name__ == '__main__':
-    # # Check if docker redis instance is running.
-    # r = verify_redis_running()
-    # print(r)
-    # sys.exit()
-
     # Create processes 
     celery_beat_proc = multiprocessing.Process(target=start_celery_beat)
     celery_worker_proc1 = multiprocessing.Process(target=start_worker)

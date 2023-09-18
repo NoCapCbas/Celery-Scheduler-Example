@@ -31,3 +31,6 @@ Navigate to directory with celery_scheduler.py and run the following command to 
 celery_scheduler.py
 ```
 
+### Adding Tasks
+
+To add a task it must be added in both tasks.py and _celery.py 
