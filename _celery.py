@@ -8,7 +8,7 @@ or use included docker file.
 ''' 
 
 # Config Celery
-app = Celery('run_celery', broker='redis://localhost:6379/0', backend='redis://localhost:6379/0', include=['tasks',])
+app = Celery('celery_scheduler', broker='redis://localhost:6379/0', backend='redis://localhost:6379/0', include=['tasks',])
 
 # Change timezone from UTC 
 app.conf.timezone = 'America/New_York'

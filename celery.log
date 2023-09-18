@@ -1,50 +1,12 @@
-[2023-09-18 10:25:53,390: WARNING/Process-2] Y:\_PyScripts\Damon\celery_scheduler\venv\Lib\site-packages\celery\worker\consumer\consumer.py:507: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+[2023-09-18 11:06:08,609: WARNING/Process-2] Y:\_PyScripts\Damon\celery_scheduler\venv\Lib\site-packages\celery\worker\consumer\consumer.py:507: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
 whether broker connection retries are made during startup in Celery 6.0 and above.
 If you wish to retain the existing behavior for retrying connections on startup,
 you should set broker_connection_retry_on_startup to True.
   warnings.warn(
 
-[2023-09-18 10:25:53,424: WARNING/Process-2] Y:\_PyScripts\Damon\celery_scheduler\venv\Lib\site-packages\celery\worker\consumer\consumer.py:507: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
+[2023-09-18 11:06:08,632: WARNING/Process-2] Y:\_PyScripts\Damon\celery_scheduler\venv\Lib\site-packages\celery\worker\consumer\consumer.py:507: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
 whether broker connection retries are made during startup in Celery 6.0 and above.
 If you wish to retain the existing behavior for retrying connections on startup,
 you should set broker_connection_retry_on_startup to True.
   warnings.warn(
 
-[2023-09-18 10:25:54,807: ERROR/Process-2] Task run_ScriptTracker[4c6ae4e5-78a2-4ae0-b749-db87a7c3a9b1] raised unexpected: NameError("name 'subprocess' is not defined")
-Traceback (most recent call last):
-  File "Y:\_PyScripts\Damon\celery_scheduler\venv\Lib\site-packages\celery\app\trace.py", line 477, in trace_task
-    R = retval = fun(*args, **kwargs)
-                 ^^^^^^^^^^^^^^^^^^^^
-  File "Y:\_PyScripts\Damon\celery_scheduler\venv\Lib\site-packages\celery\app\trace.py", line 760, in __protected_call__
-    return self.run(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "Y:\_PyScripts\Damon\celery_scheduler\tasks.py", line 8, in run_ScriptTracker
-    process = subprocess.Popen([r'\\sf-data\data\_PyScripts\Damon\Tasks\ScriptTracker.bat'])
-              ^^^^^^^^^^
-NameError: name 'subprocess' is not defined
-[2023-09-18 10:26:22,052: ERROR/Process-2] Task run_ScriptTracker[1e9d7489-d1a2-4756-8a8d-b52870e050f8] raised unexpected: NameError("name 'subprocess' is not defined")
-Traceback (most recent call last):
-  File "Y:\_PyScripts\Damon\celery_scheduler\venv\Lib\site-packages\celery\app\trace.py", line 477, in trace_task
-    R = retval = fun(*args, **kwargs)
-                 ^^^^^^^^^^^^^^^^^^^^
-  File "Y:\_PyScripts\Damon\celery_scheduler\venv\Lib\site-packages\celery\app\trace.py", line 760, in __protected_call__
-    return self.run(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "Y:\_PyScripts\Damon\celery_scheduler\tasks.py", line 8, in run_ScriptTracker
-    process = subprocess.Popen([r'\\sf-data\data\_PyScripts\Damon\Tasks\ScriptTracker.bat'])
-              ^^^^^^^^^^
-NameError: name 'subprocess' is not defined
-[2023-09-18 10:28:10,699: WARNING/Process-2] Y:\_PyScripts\Damon\celery_scheduler\venv\Lib\site-packages\celery\worker\consumer\consumer.py:507: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
-whether broker connection retries are made during startup in Celery 6.0 and above.
-If you wish to retain the existing behavior for retrying connections on startup,
-you should set broker_connection_retry_on_startup to True.
-  warnings.warn(
-
-[2023-09-18 10:28:10,735: WARNING/Process-2] Y:\_PyScripts\Damon\celery_scheduler\venv\Lib\site-packages\celery\worker\consumer\consumer.py:507: CPendingDeprecationWarning: The broker_connection_retry configuration setting will no longer determine
-whether broker connection retries are made during startup in Celery 6.0 and above.
-If you wish to retain the existing behavior for retrying connections on startup,
-you should set broker_connection_retry_on_startup to True.
-  warnings.warn(
-
-[2023-09-18 10:28:12,083: WARNING/Process-2] Script Tracker Executed.
-[2023-09-18 10:28:39,683: WARNING/Process-2] Script Tracker Executed.
