@@ -1,4 +1,4 @@
-geckdriver.log
+geckodriver.log
 dockerfile
 venv/
 celerybeat-schedule.bak
