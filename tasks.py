@@ -51,17 +51,17 @@ def run_FinlandScrape():
 
 @app.task(name='run_ArgentinaETL')
 def run_ArgentinaETL():
-    process = subprocess.Popen([r'\\sf-data\data\_PyScripts\Damon\Tasks\finlandAutomation.bat'])
+    process = subprocess.Popen([r'\\sf-data\data\_PyScripts\Damon\Tasks\Aregentina_ETL.bat'])
     print('Aregentina Executed.')
 
 @app.task(name='run_FranceCustomsETL')
 def run_FranceCustomsETL():
-    process = subprocess.Popen([r'\\sf-data\data\_PyScripts\Damon\Tasks\finlandAutomation.bat'])
+    process = subprocess.Popen([r'\\sf-data\data\_PyScripts\Damon\Tasks\France_Customs_ETL.bat'])
     print('France Customs ETL Executed.')
 
 @app.task(name='run_ItalyIstatETL')
 def run_ItalyIstatETL():
-    process = subprocess.Popen([r'\\sf-data\data\_PyScripts\Damon\Tasks\finlandAutomation.bat'])
+    process = subprocess.Popen([r'\\sf-data\data\_PyScripts\Damon\Tasks\italyAutomation.bat'])
     print('Italy ISTAT Scrape Executed.')
 
 @app.task(name='run_CzechRepublicETL')
